@@ -1,74 +1,172 @@
-/* Main container */
-div {
-    box-sizing: border-box;
-}
+/* ================================
+   LOGIN PAGE
+================================ */
 
-/* Login form */
-form {
-    width: 400px;
-    margin: 100px auto;
-    padding: 35px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+body {
+    margin: 0;
+    background: #f8fafc;
     font-family: Arial, sans-serif;
 }
 
-/* Email and password sections */
+/* Login form */
+
+form {
+    width: min(90%, 420px);
+    margin: 80px auto;
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Form rows */
+
 form > div {
     display: flex;
     align-items: center;
+
     margin-bottom: 20px;
 }
 
+
 /* Labels */
+
 form span {
     width: 90px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+
+    color: #374151;
+
+    font-size: 15px;
+    font-weight: 600;
 }
 
-/* Input fields */
+
+/* Inputs */
+
 form input {
     flex: 1;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    color: #111827;
+    background: #f9fafb;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
     outline: none;
-    transition: 0.3s;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
 }
 
-/* Input focus effect */
+
+/* Input focus */
+
 form input:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+    background: #ffffff;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
 }
+
+
+/* Placeholder */
+
+form input::placeholder {
+    color: #9ca3af;
+}
+
 
 /* Login button */
+
 form button {
     width: 100%;
-    padding: 12px;
+
     margin-top: 10px;
+    padding: 13px 20px;
+
+    color: #ffffff;
+    background: #2563eb;
+
     border: none;
-    border-radius: 6px;
-    background: #4a90e2;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
 
 /* Button hover */
+
 form button:hover {
-    background: #357abd;
+    background: #1d4ed8;
+
     transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.25);
 }
 
-/* Page background */
-body {
-    margin: 0;
-    background: #f2f5f9;
+
+/* Button click */
+
+form button:active {
+    transform: translateY(0);
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    form {
+        margin: 40px auto;
+        padding: 25px;
+    }
+
+    form > div {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    form span {
+        width: auto;
+    }
+
+    form input {
+        width: 100%;
+    }
 }
